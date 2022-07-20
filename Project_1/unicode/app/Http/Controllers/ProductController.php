@@ -37,8 +37,10 @@ class ProductController extends Controller
     }
     //Thêm dữ liệu vào sản phẩm (phương thức post)
 
-    public function HandleAddProduct(){
-        return 'Thêm Sản Phẩm Thành Công ';
+    public function HandleAddProduct(Request $request){
+        $allData = $request->all();
+        dd($allData);
+        
 
     }
     //Xoá dữ liệu (phương thức delete)

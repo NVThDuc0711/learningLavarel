@@ -16,30 +16,33 @@ class CheckLoginAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        echo 'Đăng Nhập Thành Công';
-        if($this -> isLogin())
-        {
-            return redirect(route('admin.login'));
-            
-            
-        }
-        else
-            
-
         
-          
+        if(!$this -> isLogin())
+        {
+            
+            return redirect(route('gethome'));
 
             
-
-            return redirect(route('home'));
-
+            
         }
+        else 
+        {
+            echo 'Đăng Nhập Thành Công'.'<br>';
+        }
+
+
+
+
+    //     else{
+            
+    //         return redirect(route('home'));
+    //     }
         
         return $next($request);
     }
 
     public function isLogin()
     {
-        return fasle ; 
+        return true ; 
     }
 }
